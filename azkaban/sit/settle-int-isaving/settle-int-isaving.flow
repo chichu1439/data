@@ -1,0 +1,17 @@
+config:
+
+nodes:
+
+#### batch settlement interest for isaving
+  - name: sac7000003
+    type: command
+    config:
+      command: /data/app/sender -succRetCode='0' -sendType=pub -topic='AC700003' -su='BKACSV01'  -wks='WS000035' -env='EV000035' -version='v1' -az='A0000B' -org='TN00000B' -kvs='{}' -timeout=1200
+  - name: sac7000015
+    type: command
+    config:
+      command: /data/app/sender -succRetCode='0' -sendType=pub -topic='AC700015' -su='BKCMSU01'  -wks='WS000035' -env='EV000035' -version='v1' -az='A0000B' -org='TN00000B' -kvs='{}' -timeout=1200
+    dependsOn:
+      - sac7000003
+condition: all_success
+

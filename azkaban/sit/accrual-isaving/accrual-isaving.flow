@@ -1,0 +1,12 @@
+config:
+
+nodes:
+
+#### batch accrual for isaving
+  - name: sac7000002
+    type: command
+    config:
+      command: /data/app/sender -sendType=pub -topic='AC700002' -su='BKACSV01'  -wks='WS000035' -env='EV000035' -version='v1' -az='A0000B' -org='TN00000B' -kvs='{}' -timeout=1200
+condition: all_success
+
+
